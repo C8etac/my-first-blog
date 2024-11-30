@@ -8,16 +8,13 @@
             <h1><a href="/">C8etaclol's blog</a></h1>
         </header>
 
-        <article>
-            <time>published: 14.11.2024, 12:14</time>
-            <h2><a href="">Day One</a></h2>
-            <p>Just a little practice.</p>
-        </article>
-
-        <article>
-            <time>published: 14.11.2024, 15:42</time>
-            <h2><a href="">Day Two</a></h2>
-            <p>Here we are.</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
+        
     </body>
 </html>
